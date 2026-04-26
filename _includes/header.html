@@ -1,0 +1,31 @@
+<header class="site-header">
+    <div class="container">
+        <nav class="site-nav">
+            <a href="{{ '/' | relative_url }}" class="site-title">
+                <span class="site-name">{{ site.name }}</span>
+            </a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-list">
+                {% for page_path in site.header_pages %}
+                {% assign page_obj = site.pages | where: "path", page_path | first %}
+                {% if page_obj %}
+                <li>
+                    <a href="{{ page_obj.url | relative_url }}" class="nav-link">
+                        {{ page_obj.title }}
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+                <li>
+                    <a href="https://github.com/1905185430" target="_blank" class="nav-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

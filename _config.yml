@@ -1,0 +1,61 @@
+# Jekyll configuration for Jiaxuan Wang's Personal Website
+title: "Jiaxuan Wang | Robotics Engineer & Researcher"
+description: "Personal website showcasing robotics projects, research, and technical notes"
+url: "https://1905185430.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Site settings
+name: "Jiaxuan Wang"
+email: "1905185430@qq.com"
+github_username: 1905185430
+linkedin_username:  # Add your LinkedIn if available
+twitter_username:  # Add your Twitter if available
+description: "Robotics Engineer & Researcher | VLA Models | Robot Learning | Computer Vision"
+
+# Navigation
+header_pages:
+  - about.md
+  - projects.md
+  - blog.md
+  - docs.md
+  - contact.md
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Jiaxuan Wang"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+      author: "Jiaxuan Wang"
+
+# Exclude from processing
+exclude:
+  - .git
+  - .gitignore
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
